@@ -1,6 +1,6 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import Project from './components/Projects'
+import Project from './components/Project'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { FaPlay, FaInfoCircle } from "react-icons/fa";
 
@@ -39,9 +39,6 @@ function App() {
 
         <div className='trending'>
           <h1>Trending Now</h1>
-          <Project />
-          <Project />
-          <Project />
           <Project />
           <br />
           .
