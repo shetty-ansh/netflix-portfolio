@@ -40,7 +40,7 @@ const projectData = [
     link: "https://github.com/shetty-ansh/CareerCrate-"
   },
   {
-    name: "IRA Therapist",
+    name: "ira Therapist",
     description: "Virtual assistant with real-time voice interaction.",
     features:
       "Built a virtual assistant using MEAN Stack, ElevenLabs and Gemini APIs, supporting 100+ voice commands and real-time interactions. Integrated speech-to-text, text-to-speech with API models for context-aware, personalized responses. Constructed modular backend/frontend components with asynchronous workflows, improving response efficiency and capable of handling 1000+ queries daily.",
@@ -126,6 +126,8 @@ const projectData = [
     ],
     link: "https://github.com/shetty-ansh/focusflow"
   }
+
+  
 ];
 
 

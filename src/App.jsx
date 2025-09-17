@@ -3,7 +3,8 @@ import Navbar from './components/Navbar'
 import Project from './components/Project'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { FaPlay, FaInfoCircle } from "react-icons/fa";
-
+import projectData from './data/projectsData';
+import Carousel from './components/Carousel';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <h1>Ansh Shetty</h1>
             <h3>Trending <span>#1</span> in Developers</h3>
             <h2>
-              I’m a Computer Engineering student and full-stack developer passionate about
+              I am a Computer Engineering student and full-stack developer passionate about
               building products that are fast, scalable, and user-focused. From creating a
               Spotify stats dashboard with OAuth-secured logins to developing a MERN job
               portal handling 500+ listings, I love solving problems with clean code and smart
@@ -39,16 +40,7 @@ function App() {
 
         <div className='trending'>
           <h1>Trending Now</h1>
-          <Project />
-          <br />
-          .
-          <br />
-          <br />
-          .
-          <br />
-          <br />
-          .
-          <br />
+          <Carousel />        
         </div>
       </div>
     </>

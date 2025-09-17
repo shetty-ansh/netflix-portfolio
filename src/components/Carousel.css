@@ -1,0 +1,47 @@
+.carousel-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x:scroll;
+  padding: 1rem;
+  background-color: black;
+  max-width: 100vw;
+}
+
+.trending-options {
+  position: relative;
+  flex: 0 0 auto;
+  /* aspect-ratio: 9 / 16; */
+  height: 300px;
+  width: 250px; /* adjust as needed */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(70%);
+  transition: transform 0.3s ease;
+}
+
+.trending-options:hover .cover-image {
+  transform: scale(1.05);
+}
+
+.trending-options::after {
+  content: attr(id);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.8rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  text-align: center;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
