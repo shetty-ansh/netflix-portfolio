@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../styles/Professional.css';
+// import { roadmapData } from "../data/roadmapData.js";
 
-const Professional = () => {
-    const [visibleItems, setVisibleItems] = useState(new Set());
-    const [activeFilter, setActiveFilter] = useState('all');
-
-    const roadmapData = [
+const roadmapData = [
         {
             id: 1,
             period: "Mar – Jun 2025",
@@ -89,6 +86,14 @@ const Professional = () => {
         }
     ];
 
+
+
+const Professional = () => {
+    const [visibleItems, setVisibleItems] = useState(new Set());
+    const [activeFilter, setActiveFilter] = useState('all');
+
+    
+
     const filteredData = activeFilter === 'all' 
         ? roadmapData 
         : roadmapData.filter(item => item.type === activeFilter);
@@ -126,7 +131,7 @@ const Professional = () => {
                     color: '#ff4444',
                     bgColor: '#1a1a1a'
                 };
-            case 'leadership':
+            case 'Volunteering':
                 return {
                     icon: '▲',
                     color: '#ffaa00',
@@ -181,10 +186,10 @@ const Professional = () => {
                         EDUCATION
                     </button>
                     <button 
-                        className={`filter-btn ${activeFilter === 'leadership' ? 'active' : ''}`}
-                        onClick={() => setActiveFilter('leadership')}
+                        className={`filter-btn ${activeFilter === 'Volunteering' ? 'active' : ''}`}
+                        onClick={() => setActiveFilter('Volunteering')}
                     >
-                        LEADERSHIP
+                        VOLUNTEERING
                     </button>
                 </nav>
             </header>
