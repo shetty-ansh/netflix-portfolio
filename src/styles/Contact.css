@@ -1,0 +1,402 @@
+/* Contact.css - Clean Mobile-Responsive Design */
+
+/* Base Styles */
+.contact-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  color: #ffffff;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Main Layout */
+.main-div {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+/* Vertical Carousel (Desktop) */
+.vertical-carousel {
+  width: 40%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.horizontal-carousel {
+  display: none; /* Hidden on desktop */
+}
+
+.carousel-track {
+  transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.vertical-track {
+  height: calc(100% * 6); /* Adjust based on number of images */
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-item {
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.horizontal-track {
+  width: calc(100% * 6); /* Adjust based on number of images */
+  display: flex;
+  height: 200px;
+}
+
+.horizontal-item {
+  width: calc(100% / 6);
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) contrast(1.1);
+  transition: all 0.8s ease;
+}
+
+.carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* Remove all carousel indicators and controls */
+.carousel-indicators,
+.vertical-indicators,
+.horizontal-indicators,
+.indicator {
+  display: none;
+}
+
+/* Contact Card */
+.contact-card-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 3rem;
+  /* background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); */
+  position: relative;
+  min-height: 100vh;
+  /* background-color: #00ff88; */
+}
+
+/* .contact-card-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+} */
+
+.contact-container{
+  display: flex;
+  background-color: #c23030;
+  /* height: 80%;
+  width: 80%; */
+  flex-direction: column;
+  /* height: 600px;
+  width: 300px; */
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 500px;
+}
+
+.my-image {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#location{
+margin-top: 20px;
+}
+
+#location-pin{
+    color: red;
+}
+
+.image-frame {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Typography */
+.greeting {
+  font-size: 40px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #cccccc;
+  line-height: 1.4;
+}
+
+/* Social Buttons */
+.socials-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials-button {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+
+}
+
+.socials-button:hover {
+  background: var(--social-color);
+  border-color: var(--social-color);
+  color: #ffffff;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .main-div {
+    flex-direction: column;
+  }
+  
+  .vertical-carousel {
+    width: 100%;
+    height: 35vh;
+  }
+  
+  .contact-card-container {
+    width: 100%;
+    min-height: 65vh;
+    padding: 3rem 2rem;
+  }
+  
+  .vertical-track {
+    flex-direction: row;
+    width: calc(100% * 6);
+    height: 100%;
+  }
+  
+  .vertical-item {
+    width: calc(100% / 6);
+    height: 35vh;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .contact-container {
+    overflow-y: auto;
+  }
+  
+  .main-div {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  .vertical-carousel {
+    display: none; /* Hide vertical carousel on mobile */
+  }
+  
+  .horizontal-carousel {
+    display: block; /* Show horizontal carousel */
+    order: 2;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  
+  .contact-card-container {
+    order: 1;
+    width: 100%;
+    min-height: calc(100vh - 250px);
+    padding: 2rem 1rem;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .image-ring {
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+  }
+  
+  .greeting {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .socials-container {
+    gap: 0.8rem;
+  }
+  
+  .socials-button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .contact-card-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .greeting {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .socials-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .social-icon {
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+  }
+  
+  .horizontal-carousel {
+    height: 150px;
+    margin: 1rem 0;
+  }
+  
+  .horizontal-track {
+    height: 150px;
+  }
+  
+  .horizontal-item {
+    height: 150px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+  }
+  
+  .image-ring {
+    animation: none;
+  }
+  
+  .socials-button {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .contact-card-container {
+    background: #000000;
+    border: 2px solid #ffffff;
+  }
+  
+  .socials-button {
+    border-color: #ffffff;
+    background: #000000;
+  }
+  
+  .socials-button:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+}
