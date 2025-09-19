@@ -11,18 +11,10 @@ const Home = () => {
           <img className="hero-gif" src="/jake-gif.gif" alt="jake-peralta" />
         </div>
         <div className="hero-text">
-          <h1>Ansh Shetty</h1>
+          <h1 id="name">Ansh Shetty</h1>
           <h3>Trending <span>#1</span> in Developers</h3>
           <h2>
-            I am a Computer Engineering student and full-stack developer passionate about
-            building products that are fast, scalable, and user-focused. From creating a
-            Spotify stats dashboard with OAuth-secured logins to developing a MERN job
-            portal handling 500+ listings, I love solving problems with clean code and smart
-            design. My projects span Angular, React, Node, and MongoDB, and I’ve also
-            explored ML with spaCy and XGBoost. Beyond tech, I’ve led city-wide recruitment
-            drives with AIESEC, played Tug of War and Basketball at college level, and even
-            guided hackathon teams to finals. Whether coding or leading, I bring curiosity,
-            teamwork, and a drive to make things better.
+           I’m a Final Year Computer Engineering student and an aspiring full-stack developer who enjoys developing fast, user-friendly products. From an on demand Spotify Wrapped to a virtual speech-to-speech therapist, I love building stuff. I predominantly work with the MEAN and MERN stack. Outside tech, I play Basketball and Tug of War for my college. I bring curiosity, teamwork, and a drive to keep improving.
           </h2>
           <div className="buttons-homepage">
             <button><FaPlay /> Resume</button>

@@ -76,13 +76,21 @@
 }
 
 .hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: absolute;
-  top: 20%;
+  /* top: 20%; */
   left: 5%;
   color: white;
   max-width: 70%;
   z-index: 2;  
   font-size: 10px;
+  /* background-color: aqua; */
+  height: 60%;
+  margin-top: 10%;
+  padding-bottom: 20px;
+
 }
 
 .hero-text span {
@@ -92,13 +100,17 @@
   background-clip: text;  
   font-size: 18px;
   padding-top: 5px;
+    margin: 0px;
+
+}
+
+#name{
+  font-size: 50px;
 }
 
 .hero-text h3 {
   font-size: 15px;
 }
-
-
 
 .buttons-homepage {
   display: flex;
@@ -124,7 +136,7 @@
 
 #second-button{
   background-color: rgba(211, 211, 211, 0.619);
-  color: white;
+  color: rgb(255, 0, 0);
 } 
 
 .buttons-homepage button:hover {

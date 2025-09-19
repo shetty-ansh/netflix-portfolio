@@ -160,7 +160,7 @@ const Professional = () => {
                     </div>
                     
                     <div className="subtitle-section">
-                        <p className="subtitle">From foundations to frontiers</p>
+                        <p className="subtitle">The Journey so far</p>
                         <span className="subtitle-accent">Latest first</span>
                     </div>
                 </div>

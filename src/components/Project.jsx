@@ -120,32 +120,36 @@ const Projects = () => {
             status: true
         },
         {
-            id: 8,
+            id: 9,
             name: "Cognita",
             tagline: "AI Powered Complete Learning Platform",
-            description: "Netflix-inspired portfolio project",
-            features: "A unique portfolio website designed with Netflix's UI/UX principles, showcasing projects in an engaging, cinematic interface with smooth animations and responsive design.",
-            category: "frontend",
-            skills: ["React", "Tailwind CSS", "Frontend Design", "UI/UX", "Responsive Design"],
+            description: "Complete learning management system",
+            features: "A comprehensive learning platform with AI-powered features, course management, progress tracking, and interactive learning modules designed to enhance educational experiences.",
+            category: "fullstack",
+            skills: ["React", "Node.js", "AI Integration", "Learning Management", "UI/UX Design"],
             link: "https://github.com/shetty-ansh/cognita",
-            featured: false
+            featured: false,
+            status: false
         }
-
     ];
 
+    // Separate active and inactive projects
+    const activeProjects = projectData.filter(project => project.status === true);
+    const inactiveProjects = projectData.filter(project => project.status === false);
+
     const categories = [
-        { id: 'all', name: 'All Projects', count: projectData.length },
-        { id: 'fullstack', name: 'Full Stack', count: projectData.filter(p => p.category === 'fullstack').length },
-        { id: 'ai-ml', name: 'AI & ML', count: projectData.filter(p => p.category === 'ai-ml').length },
-        { id: 'backend', name: 'Backend', count: projectData.filter(p => p.category === 'backend').length },
-        { id: 'frontend', name: 'Frontend', count: projectData.filter(p => p.category === 'frontend').length }
+        { id: 'all', name: 'All Projects', count: activeProjects.length },
+        { id: 'fullstack', name: 'Full Stack', count: activeProjects.filter(p => p.category === 'fullstack').length },
+        { id: 'ai-ml', name: 'AI & ML', count: activeProjects.filter(p => p.category === 'ai-ml').length },
+        { id: 'backend', name: 'Backend', count: activeProjects.filter(p => p.category === 'backend').length },
+        { id: 'frontend', name: 'Frontend', count: activeProjects.filter(p => p.category === 'frontend').length }
     ];
 
     const filteredProjects = activeFilter === 'all'
-        ? projectData
-        : projectData.filter(project => project.category === activeFilter);
+        ? activeProjects
+        : activeProjects.filter(project => project.category === activeFilter);
 
-    const featuredProjects = projectData.filter(project => project.featured);
+    const featuredProjects = activeProjects.filter(project => project.featured);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -164,7 +168,7 @@ const Projects = () => {
         projectItems.forEach(item => observer.observe(item));
 
         return () => observer.disconnect();
-    }, [filteredProjects]);
+    }, [filteredProjects, inactiveProjects]);
 
     // Auto-rotate featured project
     useEffect(() => {
@@ -184,11 +188,89 @@ const Projects = () => {
         }
     };
 
+    const renderProjectGrid = (projects, showAsInactive = false) => (
+        <div className="projects-grid">
+            {projects.map((project, index) => {
+                const isVisible = visibleItems.has(project.id);
+                const categoryColor = getCategoryColor(project.category);
+
+                return (
+                    <article
+                        key={project.id}
+                        className={`project-item ${isVisible ? 'visible' : ''} ${showAsInactive ? 'inactive-project' : ''}`}
+                        data-id={project.id}
+                        style={{
+                            animationDelay: `${index * 0.1}s`,
+                            '--category-color': categoryColor
+                        }}
+                    >
+                        <div className="project-card">
+                            {/* Card Header */}
+                            <header className="card-header">
+                                <div className="project-meta">
+                                    <span
+                                        className="project-type"
+                                        style={{ color: categoryColor }}
+                                    >
+                                        {project.category}
+                                    </span>
+                                </div>
+                                <div
+                                    className="category-indicator"
+                                    style={{ backgroundColor: categoryColor }}
+                                ></div>
+                            </header>
+
+                            {/* Card Content */}
+                            <div className="card-content">
+                                <h3 className="project-name">{project.name}</h3>
+                                <p className="project-tagline">{project.tagline}</p>
+                                <p className="project-description">{project.description}</p>
+
+                                {/* Skills Tags */}
+                                <div className="skills-tags">
+                                    {project.skills.slice(0, 3).map((skill, idx) => (
+                                        <span key={idx} className="skill-tag">
+                                            {skill}
+                                        </span>
+                                    ))}
+                                    {project.skills.length > 3 && (
+                                        <span className="skill-tag more">
+                                            +{project.skills.length - 3} more
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            {/* Card Footer */}
+                            <footer className="card-footer">
+                                {!showAsInactive ? (
+                                    <>
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                                            <span><i className="fa fa-play" aria-hidden="true"></i> Play</span> 
+                                        </a>
+                                        <a className="project-info">
+                                            <span><i className="fa fa-info-circle" aria-hidden="true"></i> More</span>
+                                        </a>
+                                    </>
+                                ) : (
+                                    <div className="coming-soon-badge">
+                                        Coming Soon
+                                    </div>
+                                )}
+                            </footer>
+                        </div>
+                    </article>
+                );
+            })}
+        </div>
+    );
+
     return (
         <div className="projects-container">
             {/* Hero Featured Project */}
             <div className="pre-hero">
-            <span className="hero-badge-text">Trending in Projects</span>
+                <span className="section-title" id="hero-badge-text">Trending in Projects</span>
             </div>
             <section className="hero-section">
                 <div className="hero-content">
@@ -201,33 +283,27 @@ const Projects = () => {
                         <p className="hero-tagline">{featuredProjects[featuredProject]?.tagline}</p>
                         <p className="hero-description">{featuredProjects[featuredProject]?.description}</p>
 
-                    </div>
-                
-                </div>
-                <div className="hero-actions">
+                        <div className="hero-actions">
                             <a
                                 href={featuredProjects[featuredProject]?.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hero-btn primary"
                             >
-                                <i class="fa fa-play" aria-hidden="true"></i>  Play
+                                <i className="fa fa-play" aria-hidden="true"></i> Play
                             </a>
                             <button className="hero-btn secondary">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i> More
+                                <i className="fa fa-info-circle" aria-hidden="true"></i> More
                             </button>
                         </div>
+                    </div>
+                </div>
             </section>
 
-            {/* Projects Section */}
-            <section className="projects-section">
-                <header className="section-header">
-                    <div className="header-content">
+            {/* Active Projects Section */}
+            <section className="projects-section" id="nav-panel">
                         <p className="section-title">Continue Watching</p>
-                    </div>
-
-                    {/* Filter Navigation */}
-                    <nav className="filter-nav">
+                         <nav className="filter-nav">
                         {categories.map((category) => (
                             <button
                                 key={category.id}
@@ -239,82 +315,21 @@ const Projects = () => {
                             </button>
                         ))}
                     </nav>
-                </header>
-
-                {/* Projects Grid */}
-                <div className="projects-grid">
-                    {filteredProjects.map((project, index) => {
-                        const isVisible = visibleItems.has(project.id);
-                        const categoryColor = getCategoryColor(project.category);
-
-                        return (
-                            <article
-                                key={project.id}
-                                className={`project-item ${isVisible ? 'visible' : ''}`}
-                                data-id={project.id}
-                                style={{
-                                    animationDelay: `${index * 0.1}s`,
-                                    '--category-color': categoryColor
-                                }}
-                            >
-                                <div className="project-card">
-                                    {/* Card Header */}
-                                    <header className="card-header">
-                                        <div className="project-meta">
-                                            <span
-                                                className="project-type"
-                                                style={{ color: categoryColor }}
-                                            >
-                                                {project.category}
-                                            </span>
-                                        </div>
-                                        <div
-                                            className="category-indicator"
-                                            style={{ backgroundColor: categoryColor }}
-                                        ></div>
-                                    </header>
-
-                                    {/* Card Content */}
-                                    <div className="card-content">
-                                        <h3 className="project-name">{project.name}</h3>
-                                        <p className="project-tagline">{project.tagline}</p>
-                                        <p className="project-description">{project.description}</p>
-
-                                        {/* Skills Tags */}
-                                        <div className="skills-tags">
-                                            {project.skills.slice(0, 3).map((skill, idx) => (
-                                                <span key={idx} className="skill-tag">
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                            {project.skills.length > 3 && (
-                                                <span className="skill-tag more">
-                                                    +{project.skills.length - 3} more
-                                                </span>
-                                            )}
-                                        </div>
-
-                                    </div>
-
-                                    {/* Card Footer */}
-                                    <footer className="card-footer">
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <span><i class="fa fa-play" aria-hidden="true"></i>  Play</span> 
-                                        </a>
-                                        <a className="project-info">
-                                            <span><i class="fa fa-info-circle" aria-hidden="true"></i> More</span>
-                                        </a>
-                                    </footer>
-                                </div>
-                            </article>
-                        );
-                    })}
-                </div>
             </section>
-            <section>
-            <p className="section-title">Coming Soon</p>
 
+            <section className="projects-section">
+                {renderProjectGrid(filteredProjects)}
             </section>
+
+            {/* Inactive Projects Section */}
+            {inactiveProjects.length > 0 && (
+                <section className="projects-section">
+                    <div className="header-content">
+                        <p className="section-title">Coming Soon</p>
+                    </div>
+                    {renderProjectGrid(inactiveProjects, true)}
+                </section>
+            )}
         </div>
     );
 };
