@@ -1,4 +1,3 @@
-import React from "react";
 import "./Carousel.css"
 
 const Carousel = () => {
@@ -6,6 +5,7 @@ const Carousel = () => {
         <div className="carousel-container">
             <div id="projects" className="trending-options"> 
                 <img className='cover-image' src="/projects-cover.png" alt="My Projects" />
+                <button></button>
             </div>
 
             <div id="skills" className="trending-options"> 

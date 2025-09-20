@@ -6,7 +6,6 @@ const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('all');
     const [featuredProject, setFeaturedProject] = useState(0);
 
-    // Project data from your file
     const projectData = [
         {
             id: 1,
@@ -133,7 +132,6 @@ const Projects = () => {
         }
     ];
 
-    // Separate active and inactive projects
     const activeProjects = projectData.filter(project => project.status === true);
     const inactiveProjects = projectData.filter(project => project.status === false);
 
@@ -170,7 +168,6 @@ const Projects = () => {
         return () => observer.disconnect();
     }, [filteredProjects, inactiveProjects]);
 
-    // Auto-rotate featured project
     useEffect(() => {
         const interval = setInterval(() => {
             setFeaturedProject(prev => (prev + 1) % featuredProjects.length);
@@ -205,7 +202,6 @@ const Projects = () => {
                         }}
                     >
                         <div className="project-card">
-                            {/* Card Header */}
                             <header className="card-header">
                                 <div className="project-meta">
                                     <span
@@ -221,13 +217,11 @@ const Projects = () => {
                                 ></div>
                             </header>
 
-                            {/* Card Content */}
                             <div className="card-content">
                                 <h3 className="project-name">{project.name}</h3>
                                 <p className="project-tagline">{project.tagline}</p>
                                 <p className="project-description">{project.description}</p>
 
-                                {/* Skills Tags */}
                                 <div className="skills-tags">
                                     {project.skills.slice(0, 3).map((skill, idx) => (
                                         <span key={idx} className="skill-tag">
@@ -242,7 +236,6 @@ const Projects = () => {
                                 </div>
                             </div>
 
-                            {/* Card Footer */}
                             <footer className="card-footer">
                                 {!showAsInactive ? (
                                     <>
@@ -268,7 +261,6 @@ const Projects = () => {
 
     return (
         <div className="projects-container">
-            {/* Hero Featured Project */}
             <div className="pre-hero">
                 <span className="section-title" id="hero-badge-text">Trending in Projects</span>
             </div>
@@ -300,7 +292,6 @@ const Projects = () => {
                 </div>
             </section>
 
-            {/* Active Projects Section */}
             <section className="projects-section" id="nav-panel">
                         <p className="section-title">Continue Watching</p>
                          <nav className="filter-nav">
@@ -321,7 +312,6 @@ const Projects = () => {
                 {renderProjectGrid(filteredProjects)}
             </section>
 
-            {/* Inactive Projects Section */}
             {inactiveProjects.length > 0 && (
                 <section className="projects-section">
                     <div className="header-content">

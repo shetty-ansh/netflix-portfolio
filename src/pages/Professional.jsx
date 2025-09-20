@@ -86,8 +86,6 @@ const roadmapData = [
         }
     ];
 
-
-
 const Professional = () => {
     const [visibleItems, setVisibleItems] = useState(new Set());
     const [activeFilter, setActiveFilter] = useState('all');
@@ -153,8 +151,8 @@ const Professional = () => {
                 <div className="header-content">
                     <div className="title-section">
                         <h1 className="main-title">
-                            PROFESSIONAL
-                            <span className="title-accent">JOURNEY</span>
+                            My
+                            <span className="title-accent">Experience</span>
                         </h1>
                         <div className="title-line"></div>
                     </div>
