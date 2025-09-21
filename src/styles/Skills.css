@@ -41,16 +41,18 @@
 
 .title-accent {
   display: block;
-  color: #ff4444;
+  color: #E50914;
   font-style: italic;
   transform: skew(-5deg);
   display: inline-block;
+      text-shadow: 4px 4px 0px #ffffff;
+
 }
 
 .title-line {
   width: 120px;
   height: 8px;
-  background-color: #ff4444;
+  background-color: #E50914;
   margin: 1rem 0 2rem 0;
 }
 
@@ -81,7 +83,7 @@
 .stat-number {
   font-size: 4rem;
   font-weight: 900;
-  color: #ff4444;
+  color: #E50914;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -140,7 +142,7 @@
 }
 
 .filter-btn.active {
-  background-color: #ff4444;
+  background-color: #E50914;
   color: #ffffff;
 }
 
