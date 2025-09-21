@@ -105,6 +105,10 @@
   font-weight: 400;
 }
 
+.hero-text h4 {
+  display: none;
+}
+
 .buttons-homepage {
   display: flex;
   gap: 15px;
@@ -119,7 +123,7 @@
   background: rgba(255, 255, 255, 1);
   border: none;
   padding: 12px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -138,8 +142,9 @@
 }
 
 #second-button {
-  background-color: rgba(211, 211, 211, 0.619);
-  color: rgb(255, 0, 0);
+  background-color: rgba(211, 211, 211, 0);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .buttons-homepage button:hover {
@@ -204,13 +209,13 @@
 /* Mobile Styles (up to 768px) */
 @media (max-width: 768px) {
   .hero-section {
-    height: 100vh;
+    height: 80vh;
     flex-direction: column;
   }
   
   .left-gradient {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.3) 0%,
@@ -231,13 +236,19 @@
   }
   
   .hero-text {
+    display: flex;
+    flex-direction: column;
     max-width: 90%;
-    left: 5%;
+    padding-left: 2%;
+    padding-top: 20%;
     height: auto;
-    margin-top: 25%;
-    justify-content: flex-start;
-    gap: 15px;
+    width: 95%;
+    margin-top: 85%;
+    justify-content: flex-end;
+    /* gap: 15px; */
     padding-bottom: 30px;
+    /* background-color: pink; */
+    margin-top: 100px;
   }
   
   #name {
@@ -247,12 +258,25 @@
   
   .hero-text h3 {
     font-size: 14px;
-    margin-bottom: 20px;
+    /* margin-bottom: 70px; */
   }
   
+  .hero-text h1 {
+    font-size: 50px;
+  }
+
+   .hero-text h4 {
+    display: block;  
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: white;
+  }
+
   /* Hide the long intro paragraph on mobile */
   .hero-text h2 {
-    display: none;
+    font-size: 50px;
+    color: white;
   }
   
   .hero-text span {
@@ -260,17 +284,17 @@
   }
   
   .buttons-homepage {
+    display: flex;
     gap: 15px;
     margin-top: 15px;
-    flex-direction: row; /* Keep buttons side by side */
-    justify-content: flex-start;
+    flex-direction: row;  
   }
   
   .buttons-homepage button {
     padding: 10px 16px;
     font-size: 14px;
     border-radius: 8px;
-    flex: none; /* Don't let buttons grow to fill space */
+    flex: none; 
   }
   
   .trending h1 {
@@ -313,7 +337,7 @@
   }
   
   .buttons-homepage {
-    flex-direction: row; /* Keep side by side even on small screens */
+    flex-direction: row;  
     gap: 10px;
     align-items: flex-start;
   }
@@ -363,14 +387,15 @@
 /* Landscape Orientation for Mobile */
 @media (max-width: 768px) and (orientation: landscape) {
   .hero-section {
-    height: 100vh;
+    height: 80vh;
   }
   
   .hero-text {
-    margin-top: 10%;
+    margin-top: 0%;
     height: auto;
-    max-height: 80%;
+    max-height: 100%;
     overflow-y: auto;
+    margin-top: -30%;
   }
   
   #name {

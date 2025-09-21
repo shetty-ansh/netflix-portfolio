@@ -20,8 +20,12 @@ const Contact = () => {
             alt: "Image 3"
         },
         {
-            src: "/contact-me-image-6.jpg",
+            src: "/contact-me-image-7.jpg",
             alt: "Image 4"
+        },
+        {
+            src: "/contact-me-image-6.jpg",
+            alt: "Image 5"
         }
     ];
 
@@ -31,7 +35,7 @@ const Contact = () => {
             alt: "Mobile 1"
         },
         {
-            src: "/contact-me-image-4.jpg",
+            src: "/contact-me-image-4.2.jpg",
             alt: "Mobile 2"
         },
         {
@@ -41,6 +45,10 @@ const Contact = () => {
         {
             src: "/contact-me-image-6.jpg",
             alt: "Mobile 4"
+        },
+        {
+            src: "/contact-me-image-7.jpg",
+            alt: "Mobile 5"
         }
     ];
 
