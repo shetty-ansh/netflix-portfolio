@@ -10,12 +10,12 @@ const roadmapData = [
             title: "Tech Intern",
             subtitle: "Chrysalis Technosoft",
             type: "work",
-            description: "Enhanced jobs247 platform with significant performance improvements and feature development.",
+            description: "I helped build the Jobs247 platform from the ground up, contributing to core feature development and implementing performance improvements that made the product faster and more responsive.",
             highlights: [
-                "Improved dashboard responsiveness by 20%",
-                "Integrated RESTful APIs and handled NoSQL data",
-                "Debugged production features",
-                "Agile collaboration reducing delivery time by 10%"
+                "Spearheaded development on the candidate-side dashboard, using RESTful APIs and JavaScript",
+                "Optimized component reusability and reduced redundant API calls in the dashboard.",
+                "NoSQL database handling and Version Control (Git) in an Agile environment.",
+                "Built a webhook pipeline that normalized data and auto-mapped fields, cutting manual fixes by 75%."
             ]
         },
         {
@@ -27,10 +27,10 @@ const roadmapData = [
             type: "work",
             description: "Developed comprehensive machine learning solutions with end-to-end pipeline implementation.",
             highlights: [
-                "Built ML pipelines from data scraping to model training",
-                "Applied NLP with spaCy framework",
+                "Helped build ML pipelines from data scraping to model training",
+                "Extracted data using BeautifulSoup & spaCy, extracting data with high accuracy (~80%)",
                 "Boosted model accuracy by 10% using XGBoost",
-                "Expertise in preprocessing and feature engineering"
+                "Gained experience in preprocessing and feature engineering"
             ]
         },
         {
@@ -60,8 +60,8 @@ const roadmapData = [
                 "Smart India Hackathon (Top Team)",
                 "Oscillation Hackathon (Finalist)",
                 "Research Projects: Driver Fatigue Detection, Smart Irrigation",
-                "Sports: Basketball & Tug of War Representative",
-                "Technical Skills: MEAN/MERN Stacks, ML, APIs",
+                "Sports: Basketball & Tug of War Team",
+                "Technical Skills: MEAN/MERN Stacks, APIs, Python, Java, JS/TS",
                 "Leadership: SIH Team Lead, Discipline Incharge (Zephyr Fest)",
                 "Social Impact: Teaching underprivileged children"
             ]
@@ -69,7 +69,7 @@ const roadmapData = [
         {
             id: 5,
             period: "2020 – 2022",
-            year: "2020",
+            year: "2022",
             title: "Junior College (HSC)",
             type: "education",
             description: "Higher Secondary Certificate, preparing for engineering studies with focus on science and mathematics.",
@@ -78,7 +78,7 @@ const roadmapData = [
         {
             id: 6,
             period: "2010 – 2020",
-            year: "2010",
+            year: "2020",
             title: "Schooling (ICSE Board)",
             type: "education",
             description: "Completed foundational education under ICSE curriculum, building strong academic fundamentals.",

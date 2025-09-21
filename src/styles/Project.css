@@ -21,10 +21,8 @@ body{
   line-height:1.6;
 }
 
-/* Container */
 .projects-container{min-height:100vh; padding-top: 10vh;}
 
-/* HERO */
 .hero-section{ 
   height:10vh; 
   display:flex; 
