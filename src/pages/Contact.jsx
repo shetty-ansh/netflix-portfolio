@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import '../styles/Contact.css';
 
 const Contact = () => {
@@ -6,76 +6,46 @@ const Contact = () => {
     const [isFlipped, setIsFlipped] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
+    const mobileTrackRef = useRef(null);
+
     const desktopCarouselImages = [
-        {
-            src: "/contact-me-image-3.jpg",
-            alt: "Image 1"
-        },
-        {
-            src: "/contact-me-image-4.jpg",
-            alt: "Image 2"
-        },
-        {
-            src: "/contact-me-image-5.jpg",
-            alt: "Image 3"
-        },
-        {
-            src: "/contact-me-image-7.jpg",
-            alt: "Image 4"
-        },
-        {
-            src: "/contact-me-image-6.jpg",
-            alt: "Image 5"
-        }
+        { src: "/contact-me-image-3.jpg", alt: "Image 1" },
+        { src: "/contact-me-image-4.jpg", alt: "Image 2" },
+        { src: "/contact-me-image-5.jpg", alt: "Image 3" },
+        { src: "/contact-me-image-7.jpg", alt: "Image 4" },
+        { src: "/contact-me-image-6.jpg", alt: "Image 5" }
     ];
 
     const mobileCarouselImages = [
-        {
-            src: "/contact-me-image-3.jpg",
-            alt: "Mobile 1"
-        },
-        {
-            src: "/contact-me-image-4.2.jpg",
-            alt: "Mobile 2"
-        },
-        {
-            src: "/contact-me-image-5.jpg",
-            alt: "Mobile 3"
-        },
-        {
-            src: "/contact-me-image-6.jpg",
-            alt: "Mobile 4"
-        },
-        {
-            src: "/contact-me-image-7.jpg",
-            alt: "Mobile 5"
-        }
+        { src: "/contact-me-image-3.2.jpg", alt: "Mobile 1" },
+        { src: "/contact-me-image-4.2.jpg", alt: "Mobile 2" },
+        { src: "/contact-me-image-5.jpg", alt: "Mobile 3" },
+        { src: "/contact-me-image-6.jpg", alt: "Mobile 4" },
+        { src: "/contact-me-image-7.jpg", alt: "Mobile 5" }
     ];
 
     const socialButtons = [
         {
             name: "Email",
-            label: <i class="fa fa-envelope" aria-hidden="true"></i>,
+            label: <i className="fa fa-envelope" aria-hidden="true"></i>,
             handle: "ansh.shetty.22@gmail.com",
             action: () => window.open("mailto:ansh.shetty.22@gmail.com")
         },
         {
             name: "GitHub",
-            label: <i class="fa fa-github" aria-hidden="true"></i>,
+            label: <i className="fa fa-github" aria-hidden="true"></i>,
             handle: "/shetty-ansh",
             action: () => window.open("https://github.com/shetty-ansh", "_blank")
         },
         {
             name: "LinkedIn",
-            label: <i class="fa fa-linkedin" aria-hidden="true"></i>
-,
+            label: <i className="fa fa-linkedin" aria-hidden="true"></i>,
             handle: "/ansh-shetty",
             action: () => window.open("https://linkedin.com/in/ansh-shetty", "_blank")
         },
         {
             name: "Instagram",
-            label: <i class="fa fa-instagram" aria-hidden="true"></i>
-,
+            label: <i className="fa fa-instagram" aria-hidden="true"></i>,
             handle: "@anshshetty_",
             action: () => window.open("https://instagram.com/anshshetty_", "_blank")
         }
@@ -91,6 +61,28 @@ const Contact = () => {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
+    // Measure the mobile track and set CSS variables for a pixel-perfect loop
+    useEffect(() => {
+        if (!isMobile) return;
+        const el = mobileTrackRef.current;
+        if (!el) return;
+
+        const update = () => {
+            // el.scrollWidth contains width of both sets (since JSX duplicates images)
+            const half = el.scrollWidth / 2; // distance to move (px)
+            // set CSS vars on the track element so CSS keyframes can use them
+            el.style.setProperty('--scroll-distance', `-${Math.round(half)}px`);
+            // keep a reasonable duration (px-per-second heuristic)
+            const durationSec = Math.max(20, Math.round(half / 50));
+            el.style.setProperty('--carousel-duration', `${durationSec}s`);
+        };
+
+        // run initially and on resize
+        update();
+        window.addEventListener('resize', update);
+        return () => window.removeEventListener('resize', update);
+    }, [isMobile]);
+
     const handleCardFlip = () => {
         setIsFlipped(!isFlipped);
     };
@@ -98,14 +90,9 @@ const Contact = () => {
     const renderDesktopCarousel = (images) => (
         <div className="vertical-carousel-container">
             <div className="vertical-carousel-track">
-                {/* Triple the images for smooth infinite loop */}
                 {[...images, ...images, ...images].map((image, index) => (
                     <div key={index} className="vertical-carousel-item">
-                        <img
-                            src={image.src}
-                            alt={image.alt}
-                            className="carousel-image"
-                        />
+                        <img src={image.src} alt={image.alt} className="carousel-image" />
                         <div className="image-overlay"></div>
                     </div>
                 ))}
@@ -115,15 +102,11 @@ const Contact = () => {
 
     const renderMobileCarousel = (images) => (
         <div className="horizontal-carousel-container">
-            <div className="horizontal-carousel-track">
-                {/* Triple the images for smooth infinite loop */}
-                {[...images, ...images, ...images].map((image, index) => (
+            {/* attach ref to the track and ensure exactly two sets of images for reliable measurement */}
+            <div className="horizontal-carousel-track" ref={mobileTrackRef}>
+                {[...images, ...images].map((image, index) => (
                     <div key={index} className="horizontal-carousel-item">
-                        <img
-                            src={image.src}
-                            alt={image.alt}
-                            className="carousel-image"
-                        />
+                        <img src={image.src} alt={image.alt} className="carousel-image" />
                         <div className="image-overlay"></div>
                     </div>
                 ))}
@@ -133,7 +116,6 @@ const Contact = () => {
 
     return (
         <div className="contact-container">
-            {/* Desktop Layout */}
             {!isMobile && (
                 <div className="desktop-layout">
                     <div className="left-section">
@@ -153,35 +135,23 @@ const Contact = () => {
                                 <div className="portfolio-line-2">CONNECT</div>
                                 <div className="portfolio-line-3">CREATE</div>
                             </div>
-                            
+
                             <div className="social-links-container">
                                 {socialButtons.map((social, index) => (
                                     <div key={index} className="social-link">
                                         <span className="social-label">{social.label}</span>
-                                        <span 
-                                            className="social-handle"
-                                            onClick={social.action}
-                                        >
-                                            {social.handle}
-                                        </span>
+                                        <span className="social-handle" onClick={social.action}>{social.handle}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
-                        <div
-                            className={`flip-card ${isFlipped ? 'flipped' : ''}`}
-                            onClick={handleCardFlip}
-                        >
+                        <div className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleCardFlip}>
                             <div className="flip-card-front">
                                 <div className="profile-section">
-                                    <img
-                                        src="/contact-me-image-1.jpg"
-                                        alt="Ansh Shetty"
-                                        className="profile-image"
-                                    />
+                                    <img src="/contact-me-image-1.jpg" alt="Ansh Shetty" className="profile-image" />
                                 </div>
-                                
+
                                 <div className="card-info">
                                     <h1 className="name">ANSH SHETTY</h1>
                                     <p className="title">FULL STACK DEVELOPER</p>
@@ -192,7 +162,6 @@ const Contact = () => {
 
                                 <div className="click-hint">
                                     <span id="laptop-clicktoflip">CLICK TO FLIP</span>
-                                    
                                 </div>
                             </div>
 
@@ -200,13 +169,10 @@ const Contact = () => {
                                 <div className="bio-section">
                                     <h2 className="bio-title">ABOUT</h2>
                                     <p className="bio-text">
-                                        I love design and anything related to art. 
-                                        I approach problems in a rational and pragmatic 
-                                        way, always aiming for the simplest and most 
-                                        functional solutions possible.
+                                        I like building full-stack web applications with the MEAN / MERN stack.
+                                        I’m curious about design and am currently learning DevOps, API security, system design, and UI/UX best practices.
+                                        Ask me about Full Stack Development, Web Design, Bollywood Music and Cricket!
                                     </p>
-                                    
-                                    
                                 </div>
 
                                 <div className="click-hint">
@@ -218,7 +184,6 @@ const Contact = () => {
                 </div>
             )}
 
-            {/* Mobile Layout */}
             {isMobile && (
                 <div className="mobile-layout">
                     <div className="mobile-header">
@@ -226,19 +191,12 @@ const Contact = () => {
                     </div>
 
                     <div className="mobile-card-section">
-                        <div
-                            className={`mobile-flip-card ${isFlipped ? 'flipped' : ''}`}
-                            onClick={handleCardFlip}
-                        >
+                        <div className={`mobile-flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleCardFlip}>
                             <div className="flip-card-front">
                                 <div className="profile-section">
-                                    <img
-                                        src="/contact-me-image-1.jpg"
-                                        alt="Ansh Shetty"
-                                        className="profile-image"
-                                    />
+                                    <img src="/contact-me-image-1.jpg" alt="Ansh Shetty" className="profile-image" />
                                 </div>
-                                
+
                                 <div className="card-info">
                                     <h1 className="name">ANSH SHETTY</h1>
                                     <p className="title">FULL STACK DEVELOPER</p>
@@ -256,12 +214,10 @@ const Contact = () => {
                                 <div className="bio-section">
                                     <h2 className="bio-title">ABOUT</h2>
                                     <p className="bio-text">
-                                        I love design and anything related to art. 
-                                        I approach problems in a rational and pragmatic 
-                                        way, always aiming for the simplest and most 
-                                        functional solutions possible.
+                                        I like building full-stack web applications with the MEAN / MERN stack.
+                                        I’m curious about design and am currently learning DevOps, API security, system design, and UI/UX best practices.
+                                        Ask me about Full Stack Development, Web Design, Bollywood Music and Cricket!
                                     </p>
-                                    
                                 </div>
 
                                 <div className="click-hint">
@@ -276,12 +232,7 @@ const Contact = () => {
                             {socialButtons.map((social, index) => (
                                 <div key={index} className="social-link">
                                     <span className="social-label">{social.label}</span>
-                                    <span 
-                                        className="social-handle"
-                                        onClick={social.action}
-                                    >
-                                        {social.handle}
-                                    </span>
+                                    <span className="social-handle" onClick={social.action}>{social.handle}</span>
                                 </div>
                             ))}
                         </div>
@@ -297,3 +248,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+ 

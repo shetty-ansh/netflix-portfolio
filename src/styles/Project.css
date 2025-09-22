@@ -228,6 +228,7 @@ body{
   display:flex;
   flex-direction:column;
   min-height:320px;
+  max-width: 40vw;
   transition:transform .22s ease,box-shadow .22s ease;
   position:relative;
 }
@@ -430,6 +431,8 @@ body{
     padding-top: 30%;
   }
   
+
+  
   .hero-content{
     display: flex;
     flex-direction:column;
@@ -535,9 +538,11 @@ body{
   }
   
   .project-card{
-    min-height:260px;
-    border-radius:12px;
-  }
+  min-width: 90vw;
+  min-height:260px;
+  border-radius:12px;
+}
+
   
   .project-name{font-size:1.05rem}
   .project-description{font-size:0.88rem}

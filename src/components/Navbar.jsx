@@ -44,11 +44,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <img 
+      <Link to="/"><img 
         src="/ansh-shetty.png" 
         alt="ansh-shetty" 
         className="nav-logo"
-      />
+      /></Link>
       
       {isMobile ? (
         <>

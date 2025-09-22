@@ -209,97 +209,149 @@
 /* Mobile Styles (up to 768px) */
 @media (max-width: 768px) {
   .hero-section {
-    height: 80vh;
+    height: 100vh;
     flex-direction: column;
+    background-color: #000;
   }
   
   .left-gradient {
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.7) 70%,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.8) 80%,
       rgb(0, 0, 0) 100%
     );
+    z-index: 3;
   }
   
   .gif-div {
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
     margin-left: 0;
+    top: 60px;
+    position: absolute;
   }
   
   .hero-gif {
-    height: 100vh;
-    object-position: center;
+    height: 70vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 0;
   }
   
   .hero-text {
-    display: flex;
-    flex-direction: column;
-    max-width: 90%;
-    padding-left: 2%;
-    padding-top: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin: 0;
     height: auto;
-    width: 95%;
-    margin-top: 85%;
     justify-content: flex-end;
-    /* gap: 15px; */
-    padding-bottom: 30px;
-    /* background-color: pink; */
-    margin-top: 100px;
+    z-index: 4;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.8) 60%,
+      rgba(0, 0, 0, 0.3) 80%,
+      transparent 100%
+    );
+    padding-top: 80px;
   }
   
   #name {
-    font-size: 36px;
-    margin-bottom: 5px;
+    font-size: 42px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
   }
   
   .hero-text h3 {
-    font-size: 14px;
-    /* margin-bottom: 70px; */
-  }
-  
-  .hero-text h1 {
-    font-size: 50px;
-  }
-
-   .hero-text h4 {
-    display: block;  
-    font-size: 14px;
-    line-height: 1.4;
-    font-weight: 400;
-    color: white;
-  }
-
-  /* Hide the long intro paragraph on mobile */
-  .hero-text h2 {
-    font-size: 50px;
-    color: white;
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    opacity: 0.9;
   }
   
   .hero-text span {
-    font-size: 16px;
+    background: linear-gradient(45deg, #e50914, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  /* Hide the long description on mobile */
+  .hero-text h2 {
+    display: none;
+  }
+  
+  .hero-text h4 {
+    display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    max-width: 90%;
   }
   
   .buttons-homepage {
     display: flex;
-    gap: 15px;
-    margin-top: 15px;
-    flex-direction: row;  
+    gap: 12px;
+    margin-top: 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
   }
   
   .buttons-homepage button {
-    padding: 10px 16px;
-    font-size: 14px;
-    border-radius: 8px;
-    flex: none; 
+    padding: 12px 24px;
+    font-size: 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    min-height: 48px;
+    flex: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  
+  .buttons-homepage button:first-child {
+    background: rgba(255, 255, 255, 0.95);
+    color: #000;
+    border: none;
+  }
+  
+  .buttons-homepage button:first-child:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  #second-button {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+    border: none;
+    backdrop-filter: blur(10px);
+  }
+  
+  #second-button:hover {
+    background-color: rgba(109, 109, 110, 0.9);
+  }
+  
+  .trending {
+    background-color: #000;
+    padding-top: 30px;
   }
   
   .trending h1 {
-    font-size: 24px;
-    padding-left: 15px;
+    font-size: 22px;
+    padding-left: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
   }
   
   .continue-watching {
@@ -307,55 +359,68 @@
   }
   
   .continue-watching h1 {
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 700;
   }
 }
 
 /* Small Mobile Styles (up to 480px) */
 @media (max-width: 480px) {
+  .hero-section {
+    height: 100vh;
+  }
+  
+  .gif-div {
+    height: 65vh;
+  }
+  
+  .hero-gif {
+    height: 65vh;
+  }
+  
   .hero-text {
-    max-width: 95%;
-    margin-top: 30%;
+    padding: 16px;
+    padding-top: 60px;
   }
   
   #name {
-    font-size: 28px;
+    font-size: 36px;
+    margin-bottom: 6px;
   }
   
   .hero-text h3 {
     font-size: 12px;
-    margin-bottom: 20px;
-  }
-  
-  /* Keep h2 hidden on small mobile too */
-  .hero-text h2 {
-    display: none;
+    margin-bottom: 10px;
   }
   
   .hero-text span {
-    font-size: 14px;
+    font-size: 13px;
+  }
+  
+  .hero-text h4 {
+    font-size: 13px;
+    margin-bottom: 16px;
+    line-height: 1.3;
   }
   
   .buttons-homepage {
-    flex-direction: row;  
     gap: 10px;
-    align-items: flex-start;
+    margin-top: 14px;
   }
   
   .buttons-homepage button {
-    padding: 8px 14px;
-    font-size: 13px;
-    width: auto;
-    min-width: 100px;
+    padding: 10px 20px;
+    font-size: 14px;
+    min-height: 44px;
   }
   
   .trending h1 {
     font-size: 20px;
-    padding-left: 10px;
+    padding-left: 16px;
   }
   
   .continue-watching {
-    padding-left: 15px;
+    padding-left: 16px;
   }
   
   .continue-watching h1 {
@@ -366,49 +431,98 @@
 /* Very Small Screens (up to 360px) */
 @media (max-width: 360px) {
   .hero-text {
-    margin-top: 30%;
-  }
-  
-  #name {
-    font-size: 24px;
-  }
-  
-  .hero-text h2 {
-    font-size: 12px;
-  }
-  
-  .buttons-homepage button {
-    padding: 7px 12px;
-    font-size: 12px;
-    min-width: 100px;
-  }
-}
-
-/* Landscape Orientation for Mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-  .hero-section {
-    height: 80vh;
-  }
-  
-  .hero-text {
-    margin-top: 0%;
-    height: auto;
-    max-height: 100%;
-    overflow-y: auto;
-    margin-top: -30%;
+    padding: 12px;
+    padding-top: 50px;
   }
   
   #name {
     font-size: 32px;
   }
   
-  .hero-text h2 {
+  .hero-text h3 {
+    font-size: 11px;
+  }
+  
+  .hero-text span {
+    font-size: 12px;
+  }
+  
+  .hero-text h4 {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .buttons-homepage button {
+    padding: 9px 18px;
     font-size: 13px;
-    line-height: 1.3;
+    min-height: 42px;
+  }
+  
+  .trending h1 {
+    font-size: 18px;
+    padding-left: 12px;
+  }
+  
+  .continue-watching {
+    padding-left: 12px;
+  }
+  
+  .continue-watching h1 {
+    font-size: 18px;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-width: 768px) and (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    height: 100vh;
+  }
+  
+  .gif-div {
+    height: 60vh;
+    top: 40px;
+  }
+  
+  .hero-gif {
+    height: 60vh;
+  }
+  
+  .hero-text {
+    padding: 12px 20px;
+    padding-top: 40px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.98) 0%,
+      rgba(0, 0, 0, 0.9) 40%,
+      rgba(0, 0, 0, 0.5) 70%,
+      transparent 100%
+    );
+  }
+  
+  #name {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+  
+  .hero-text h3 {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  
+  .hero-text h4 {
+    font-size: 12px;
+    margin-bottom: 12px;
+    line-height: 1.2;
   }
   
   .buttons-homepage {
-    flex-direction: row;
-    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 8px;
+  }
+  
+  .buttons-homepage button {
+    padding: 8px 16px;
+    font-size: 13px;
+    min-height: 36px;
   }
 }

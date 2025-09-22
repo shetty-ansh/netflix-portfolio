@@ -1,4 +1,11 @@
-/* Contact Component Styles */
+/* Contact Component Styles - Updated for seamless carousels */
+
+/* global */
+:root {
+  --carousel-duration: 30s;
+  --carousel-gap: 20px;
+}
+* { box-sizing: border-box; }
 
 .contact-container {
     min-height: 100vh;
@@ -40,7 +47,7 @@
 .vertical-carousel-track {
     display: flex;
     flex-direction: column;
-    animation: scrollVertical 30s linear infinite;
+    animation: scrollVertical var(--carousel-duration) linear infinite;
     will-change: transform;
 }
 
@@ -200,6 +207,8 @@
     height: 200px;
     object-fit: cover;
     border: 4px solid #000000;
+    display: block;
+    box-sizing: border-box;
 }
 
 .card-info {
@@ -243,8 +252,9 @@
     text-align: center;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #E50914;
+    color: #e5091496;
     letter-spacing: 0.1em;
+    margin-bottom: 10px;
 }
 
 #laptop-clicktoflip{
@@ -310,6 +320,8 @@
     height: 100%;
     object-fit: cover;
     border: 3px solid #ffffff;
+    display: block;
+    box-sizing: border-box;
 }
 
 .image-overlay {
@@ -391,46 +403,52 @@
     padding: 1rem 0;
 }
 
+/* HORIZONTAL CAROUSEL - fixed sizing, gap-based spacing, no per-item margins */
 .horizontal-carousel-container {
     width: 100%;
     height: 180px;
     overflow: hidden;
     position: relative;
+    padding: 0; /* ensure no extra spacing */
 }
 
 .horizontal-carousel-track {
-    display: flex;
-    height: 180px;
-    animation: scrollHorizontal 25s linear infinite;
+    display:flex; align-items:center; gap:var(--carousel-gap,20px);
+    height:180px;
+    animation: scrollHorizontal var(--carousel-duration,30s) linear infinite;
     will-change: transform;
+  }
+
+/* fixed width items, no margins */
+.horizontal-carousel-item {
+    flex: 0 0 250px; /* fixed item width */
+    height: 160px;
+    position: relative;
+    margin: 0;
 }
 
-.horizontal-carousel-item {
-    width: 250px;
-    height: 160px;
-    flex-shrink: 0;
-    position: relative;
-    margin-right: 20px;
+/* keep item image styles consistent */
+.horizontal-carousel-item .carousel-image {
+    border: 3px solid #fff;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    box-sizing: border-box;
 }
 
 /* Infinite Scroll Animations */
+
 @keyframes scrollVertical {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-33.33%); /* Move by 1/3 since we have 3 sets of images */
-    }
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-33.3333%); }
 }
 
+/* horizontal uses double duplication in JSX -> translate by 50% */
 @keyframes scrollHorizontal {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-33.33%); /* Move by 1/3 since we have 3 sets of images */
-    }
-}
+    0% { transform: translateX(0); }
+    100% { transform: translateX(var(--scroll-distance, -50%)); }
+  }
 
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {

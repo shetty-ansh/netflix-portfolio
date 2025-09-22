@@ -18,7 +18,7 @@ const Home = () => {
           </h2>
           <h4>Computer Science Student | Full Stack Developer</h4>
           <div className="buttons-homepage">
-            <button><FaPlay /> Resume</button>
+            <button onClick={() => window.open("/AnshShetty - RESUME.pdf", "_blank")}><FaPlay /> Resume</button>
             <button id="second-button">
               <a href="https://www.github.com/shetty-ansh" target="_blank" rel="noopener noreferrer">
                 <FaInfoCircle /> Github

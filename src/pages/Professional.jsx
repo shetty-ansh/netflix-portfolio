@@ -39,7 +39,7 @@ const roadmapData = [
             year: "2023",
             title: "Junior Manager",
             subtitle: "AIESEC in Mumbai",
-            type: "leadership",
+            type: "work",
             description: "Led strategic recruitment initiatives and international volunteer programs with measurable impact.",
             highlights: [
                 "Led city-wide recruitment: 180+ applications, 20% intake increase",
@@ -53,7 +53,7 @@ const roadmapData = [
             period: "2022 – Present",
             year: "2022",
             title: "BE in Computer Science Engineering",
-            subtitle: "TCET, SGPA 7.6",
+            subtitle: "TCET, CGPA 7.6",
             type: "education",
             description: "Currently pursuing Bachelor's degree with strong academic performance and diverse extracurricular involvement.",
             highlights: [
