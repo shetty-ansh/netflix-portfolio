@@ -14,7 +14,7 @@ const Home = () => {
           <h1 id="name">Ansh Shetty</h1>
           <h3>Trending <span>#1</span> in Developers</h3>
           <h2>
-           I’m a Final Year Computer Engineering student and an aspiring full-stack developer who enjoys developing fast, user-friendly products. From an on demand Spotify Wrapped to a virtual speech-to-speech therapist, I love building stuff. I predominantly work with the MEAN and MERN stack. Outside tech, I play Basketball and Tug of War for my college. I bring curiosity, teamwork, and a drive to keep improving.
+           I’m a  Year Computer Engineering student and an aspiring full-stack developer who enjoys developing fast, user-friendly products. From an on demand Spotify Wrapped to a virtual speech-to-speech therapist, I love building stuff. I predominantly work with the MEAN and MERN stack. Outside tech, I play Basketball and Tug of War for my college. I bring curiosity, teamwork, and a drive to keep improving.
           </h2>
           <h4>Computer Science Student | Full Stack Developer</h4>
           <div className="buttons-homepage">

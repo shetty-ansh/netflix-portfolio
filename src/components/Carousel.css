@@ -7,6 +7,9 @@
   max-width: calc(100vw - 1rem);
 }
 
+.carousel-container::-webkit-scrollbar{ display: none; } /* Chrome, Safari, Edge */
+
+
 .trending-options {
   position: relative;
   flex: 0 0 auto;
