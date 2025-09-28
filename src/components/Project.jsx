@@ -137,7 +137,19 @@ const Projects = () => {
         featured: false,
         status: false,
         info: "Built an AI-enhanced learning platform to personalize courses and track progress using React and Node. Integrated recommendation logic and interactive modules. Learned personalization strategies, scaling content delivery, and designing tracking systems for learning outcomes."
-    }
+    },
+    {
+        "id": 10,
+        "name": "Zenskar CSV Processing Pipeline",
+        "tagline": "Automated Modular Data Upload System",
+        "description": "A complete modular CSV processing and upload pipeline built using Windmill and MockAPI.",
+        "info": "Designed and implemented a modular CSV processing system using Windmill, featuring data validation, transformation, and API upload automation. Integrated error handling, retry logic, and detailed logging for each batch and record. Configured MockAPI as a simulated backend for testing API integrations.",
+        "category": "backend",
+        "skills": ["Python", "Docker", "Windmill", "mockapi.io", "API Integration", "Data Transformation", "Automation"],
+        "link": "https://github.com/shetty-ansh/zenskar-csv-pipeline",
+        "featured": false,
+        "status": true
+    }    
 ];
 
 
