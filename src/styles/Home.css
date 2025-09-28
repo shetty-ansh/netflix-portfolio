@@ -1,5 +1,8 @@
 /* Home.css - Mobile Responsive */
 
+html, body { overflow-x: hidden; }
+#root { overflow-x: hidden; }
+
 .main-page {
   display: flex;
   flex-direction: column;
@@ -22,7 +25,7 @@
   top: 0;
   left: 0;
   height: 80vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -164,6 +167,13 @@
   color: white;
   background-color: rgb(0, 0, 0);
   padding: 20px 0;
+}
+
+/* Hide carousel item names on Home (images only) */
+.trending .hover-text { display: none !important; }
+.trending .trending-options::after {
+  content: none !important;
+  display: none !important;
 }
 
 .trending h1 {
