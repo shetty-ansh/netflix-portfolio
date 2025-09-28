@@ -13,11 +13,7 @@ A visually appealing, Netflix-inspired portfolio website to showcase your projec
 
 ## Demo
 
-![Netflix Portfolio Demo](demo-screenshot.png)
-<!-- Replace with an actual screenshot or GIF of your site -->
-
-[Live Demo](https://your-portfolio-demo-link.com)  
-<!-- Update with your deployed portfolio link -->
+anshshetty.vercel.app
 
 ## Getting Started
 
