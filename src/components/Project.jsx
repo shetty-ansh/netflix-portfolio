@@ -12,7 +12,7 @@ const Projects = () => {
         name: "Spotistats",
         tagline: "Why wait for Spotify Wrapped",
         description: "Web-based dashboard for instant music analytics",
-        info: "Developed a web-based dashboard using Angular, Node.js, Express, and Spotify API to display users top tracks and artists with full listening history and individual song analytics using API integration, asynchronous requests, and secure workflows. Designed interactive visualizations and sharable summary cards to provide personalized music insights ~10% Orchestrated secure user authentication with OAuth 2.0, cutting login time by 30%",
+        info: "Developed a web-based dashboard using Angular, Node.js, Express, and Spotify API to display users' top tracks and artists with full listening history and individual song analytics. Built to deliver instant, personalized music analytics using Angular frontend and Node/Express backend with Spotify OAuth. Focused on async API calls, rate-limit handling, and visualizations. Implemented secure OAuth 2.0 authentication and designed interactive visualizations with shareable summary cards. Learned secure OAuth flows, data mapping, efficient async patterns, and crafting shareable UI insights.",
         category: "fullstack",
         skills: [
             "Angular", "Node.js", "Express.js",
@@ -21,15 +21,14 @@ const Projects = () => {
         ],
         link: "https://github.com/shetty-ansh/Spotistats",
         featured: true,
-        status: true,
-        info: "Built to deliver instant, personalized music analytics using Angular frontend and Node/Express backend with Spotify OAuth. Focused on async API calls, rate-limit handling and visualizations. Learned secure OAuth flows, data mapping, efficient async patterns, and crafting shareable UI insights."
+        status: true
     },
     {
         id: 2,
         name: "Career Crate",
         tagline: "Your next opportunity awaits",
         description: "MERN stack job portal with search and filtration",
-        info: "Engineered a MERN stack job portal with job search, filtering, application tracking, and bulk posting features supporting 500+ listings. Designed and integrated RESTful APIs for job posting, application tracking, and reducing request latency by ~20%. Built a responsive, high-performance frontend, improving user experience and increasing page load speed by ~15%. Optimized databases to reduce query time by 20%, and implemented authentication.",
+        info: "Engineered a MERN stack job portal with job search, filtering, application tracking, and bulk posting features supporting 500+ listings. Created a scalable solution to support bulk listings and search with indexed queries, pagination, and optimized APIs for lower latency. Designed and integrated RESTful APIs for job posting and application tracking, reducing request latency by ~20%. Built a responsive, high-performance frontend, improving user experience and increasing page load speed by ~15%. Optimized databases to reduce query time by 20%, and implemented secure authentication. Gained experience in practical database indexing, search/filter design, API performance tuning, and frontend-backend coordination for large datasets.",
         category: "fullstack",
         skills: [
             "MongoDB", "Express.js", "React", "Node.js", "RESTful API Development",
@@ -37,15 +36,14 @@ const Projects = () => {
         ],
         link: "https://github.com/shetty-ansh/CareerCrate-",
         featured: true,
-        status: true,
-        info: "Created a scalable MERN job portal to support bulk listings and search. Implemented indexed queries, pagination, and optimized APIs for lower latency. Learned practical database indexing, search/filter design, API performance tuning, and frontend-backend coordination for large datasets."
+        status: true
     },
     {
         id: 3,
         name: "IRA Therapist",
         tagline: "Your AI companion for mental wellness",
         description: "Virtual assistant with real-time voice interaction",
-        info: "Built a virtual assistant using MEAN Stack, ElevenLabs and Gemini APIs, supporting 100+ voice commands and real-time interactions. Integrated speech-to-text, text-to-speech with API models for context-aware, personalized responses. Constructed modular backend/frontend components with asynchronous workflows, improving response efficiency and capable of handling 1000+ queries daily.",
+        info: "Built a voice-first virtual assistant using MEAN Stack, ElevenLabs, and Gemini APIs, supporting 100+ voice commands and real-time interactions. Integrated speech-to-text and text-to-speech with API models for context-aware, personalized responses. Focused on async orchestration, session context, and modular components to enable real-time, context-aware interactions. Constructed modular backend/frontend components with asynchronous workflows, improving response efficiency and capable of handling 1000+ queries daily. Gained expertise in API chaining, latency mitigation, privacy considerations, and designing robust conversational flows.",
         category: "fullstack",
         skills: [
             "Express.js", "Angular", "Node.js", "ElevenLabs API",
@@ -53,15 +51,14 @@ const Projects = () => {
         ],
         link: "https://github.com/shetty-ansh/ira-therapist",
         featured: true,
-        status: true,
-        info: "Built a voice-first assistant using MEAN and external TTS/STT APIs to enable real-time, context-aware interactions. Focused on async orchestration, session context, and modular components. Learned API chaining, latency mitigation, privacy considerations, and robust conversational flows."
+        status: true
     },
     {
         id: 4,
         name: "SattvaApp",
         tagline: "Mental health meets technology",
         description: "Mental health platform with AI-driven insights",
-        info: "Developed a mental health platform with features like an AI Chatbot, habit tracking, journaling, mood monitoring, and AI-powered insights. Designed a responsive Angular front-end and built secure REST APIs using Node.js and Express.js. Implemented a MongoDB schema to store user habits, mood logs, and diary entries, with full CRUD functionality and interactive progress charts.",
+        info: "Developed a mental health platform combining tracking, journaling, and AI insights using Angular and Node.js. Built features including an AI Chatbot, habit tracking, mood monitoring, and personalized insights. Designed a responsive Angular frontend and implemented secure REST APIs with Node.js and Express.js. Created MongoDB schemas for time-series mood data, user habits, and diary entries, with full CRUD functionality and interactive progress charts. Focused on product-driven feature design, data modeling for user metrics, and presenting insights to drive engagement. Implemented secure REST endpoints and learned effective techniques for user engagement through data visualization.",
         category: "fullstack",
         skills: [
             "Angular", "Node.js", "Express.js", "MongoDB", "AI Chatbot",
@@ -70,73 +67,67 @@ const Projects = () => {
         ],
         link: "https://github.com/shetty-ansh/SattvaApp",
         featured: false,
-        status: true,
-        info: "Developed a mental-health platform combining tracking, journaling, and AI insights using Angular and Node.js. Built schemas for time-series mood data and secured REST endpoints. Learned product-driven feature design, data modeling for user metrics, and presenting insights to drive engagement."
+        status: true
     },
     {
         id: 5,
         name: "Drive-Safe",
         tagline: "Safety through intelligence",
         description: "Driver fatigue detection system",
-        info: "AI-based system for detecting driver fatigue using real-time monitoring with computer vision and machine learning algorithms. Implements drowsiness detection, alert mechanisms, and continuous monitoring to prevent accidents.",
+        info: "Built a real-time driver fatigue detector using computer vision and machine learning to monitor drivers and trigger safety alerts. Implemented drowsiness detection, alert mechanisms, and continuous monitoring to prevent accidents. Focused on low-latency processing and model inference for real-time performance. Gained experience in dataset labeling, model evaluation, latency optimization, and deploying computer vision models for edge-like real-time use cases.",
         category: "ai-ml",
         skills: ["Python", "Machine Learning","Computer Vision", "Real-time Processing"],
         link: "https://github.com/shetty-ansh/Drive-Safe-Driver-Fatigue-Detection-",
         featured: false,
-        status: true,
-        info: "Built a real-time driver fatigue detector using computer vision and ML to trigger safety alerts. Implemented model inference and low-latency processing. Learned dataset labeling, model evaluation, latency optimization, and deploying CV models for edge-like real-time use cases."
+        status: true
     },
     {
         id: 6,
         name: "FMC Backend API",
         tagline: "Enterprise-grade API solutions",
         description: "RESTful API with JWT authentication for ship management",
-        info: "A RESTful API built with Node.js, Express, and MongoDB (Mongoose) for managing users and ships. Includes JWT-based authentication, secure password handling, validation, and consistent error responses. Features include user registration/login, CRUD operations for ships, protected routes, and comprehensive API documentation.",
+        info: "Implemented a secure REST API for ship management with JWT authentication, validation, and clear error handling. Built with Node.js, Express, and MongoDB (Mongoose) for managing users and ships. Features include JWT-based authentication, secure password handling, user registration/login, and CRUD operations for ships. Focused on route protection, consistent responses, and comprehensive API documentation. Learned best practices in authentication, API design, error handling, and building maintainable backend services.",
         category: "backend",
         skills: ["JavaScript", "MongoDB", "Express", "Node.js", "Postman", "API Documentation", "JWT", "Authentication"],
         link: "https://github.com/shetty-ansh/fathom-marine-consultants-task",
         featured: false,
-        status: true,
-        info: "Implemented a secure REST API for ship management with JWT auth, validation, and clear error handling. Focused on route protection, consistent responses, and documentation. Learned best practices in auth, API ergonomics, and building maintainable backend services."
+        status: true
     },
     {
         id: 7,
         name: "CivicTracker",
         tagline: "Democracy in action",
         description: "Track and manage civic issues",
-        info: "A comprehensive platform for monitoring and tracking civic issues, enabling citizens to report problems, track resolution progress, and engage with local government initiatives.",
+        info: "Built a comprehensive platform for monitoring and tracking civic issues, enabling citizens to report problems and track resolution progress. Implemented using Angular and Node.js with Express.js and MongoDB. Focused on creating intuitive reporting workflows, status tracking, and engagement features for local government initiatives. Designed with attention to moderation, transparency, and user experience. Gained experience in building user-submitted workflows, notification systems, and handling inconsistent external data sources.",
         category: "fullstack",
         skills: ["Angular", "Node.js", "Express.js", "MongoDB", "REST APIs"],
         link: "https://github.com/shetty-ansh/CivicTracker",
         featured: false,
-        status: false,
-        info: "Built to let citizens report and track civic issues using Angular and Node. Implemented reporting workflows and status tracking with attention to moderation and transparency. Learned designing user-submitted workflows, notification flows, and handling inconsistent external data."
+        status: false
     },
     {
         id: 8,
         name: "Netflix Portfolio",
         tagline: "Entertainment meets professionalism",
         description: "Netflix-inspired portfolio project",
-        info: "A unique portfolio website designed with Netflix's UI/UX principles, showcasing projects in an engaging, cinematic interface with smooth animations and responsive design.",
+        info: "Designed and developed a unique portfolio website inspired by Netflix's UI/UX principles, built with React and Tailwind CSS. Created an engaging, cinematic interface with smooth animations and responsive design. Focused on implementing polished interactions, responsive layouts, and advanced CSS animations. Learned techniques for component reuse, responsive design patterns, and creating a delightful user experience while maintaining performance.",
         category: "frontend",
         skills: ["React", "Tailwind CSS", "Frontend Design", "UI/UX", "Responsive Design"],
         link: "https://github.com/shetty-ansh/netflix-portfolio",
         featured: false,
-        status: true,
-        info: "Designed a cinematic portfolio inspired by Netflix UI using React and Tailwind. Focused on animations, responsive layouts and polished interactions. Learned advanced CSS animations, component reuse, responsive patterns, and making UX feel ‘‘delightful’’ while performant."
+        status: true
     },
     {
         id: 9,
         name: "Cognita",
         tagline: "AI Powered Complete Learning Platform",
         description: "Complete learning management system",
-        info: "A comprehensive learning platform with AI-powered features, course management, progress tracking, and interactive learning modules designed to enhance educational experiences.",
+        info: "Built a comprehensive learning platform with AI-powered features, course management, and progress tracking. Developed using React and Node.js, the platform personalizes learning experiences with recommendation logic and interactive modules. Focused on creating an intuitive UI/UX for both learners and educators. Implemented features for course management, progress tracking, and AI-enhanced personalization. Gained expertise in personalization strategies, scaling content delivery, and designing effective tracking systems for learning outcomes.",
         category: "fullstack",
         skills: ["React", "Node.js", "AI Integration", "Learning Management", "UI/UX Design"],
         link: "https://github.com/shetty-ansh/cognita",
         featured: false,
-        status: false,
-        info: "Built an AI-enhanced learning platform to personalize courses and track progress using React and Node. Integrated recommendation logic and interactive modules. Learned personalization strategies, scaling content delivery, and designing tracking systems for learning outcomes."
+        status: false
     },
     {
         "id": 10,
