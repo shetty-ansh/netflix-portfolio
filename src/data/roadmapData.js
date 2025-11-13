@@ -1,23 +1,23 @@
 export const roadmapData = [
+    // {
+    //     id: 1,
+    //     period: "Sep 2025 – Present",
+    //     year: "2025",
+    //     title: "SDE Intern",
+    //     subtitle: "ThinklyLabs",
+    //     type: "work",
+    //     description:
+    //         "Working with React, TypeScript, and Next.js to build scalable frontend and backend features integrated with Supabase.",
+    //     highlights: [
+    //         "Deployed a GST-compliant billing and invoicing system using Razorpay",
+    //         "Implemented automated email notifications with Resend API",
+    //         "Ensured seamless payment workflows with accurate transaction records",
+    //         "Optimized component rendering and API response efficiency",
+    //     ],
+    // },
     {
         id: 1,
-        period: "Sep 2025 – Present",
-        year: "2025",
-        title: "SDE Intern",
-        subtitle: "ThinklyLabs",
-        type: "work",
-        description:
-            "Working with React, TypeScript, and Next.js to build scalable frontend and backend features integrated with Supabase.",
-        highlights: [
-            "Deployed a GST-compliant billing and invoicing system using Razorpay",
-            "Implemented automated email notifications with Resend API",
-            "Ensured seamless payment workflows with accurate transaction records",
-            "Optimized component rendering and API response efficiency",
-        ],
-    },
-    {
-        id: 2,
-        period: "Jul – Sep 2025",
+        period: "Sep – Nov 2025",
         year: "2025",
         title: "Full Stack Developer Intern",
         subtitle: "Zenlynx Technologies",
@@ -32,7 +32,7 @@ export const roadmapData = [
         ],
     },
     {
-        id: 3,
+        id: 2,
         period: "Mar – Jun 2025",
         year: "2025",
         title: "Tech Intern",
@@ -48,7 +48,7 @@ export const roadmapData = [
         ],
     },
     {
-        id: 4,
+        id: 3,
         period: "Dec 2024 – Jan 2025",
         year: "2024",
         title: "ML Intern",
