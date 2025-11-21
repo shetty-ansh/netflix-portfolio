@@ -42,7 +42,7 @@ const Projects = () => {
     },
     {
        "id": 3,
-      "name": "IRA Therapist",
+      "name": "Nirva Therapist",
       "tagline": "Your AI companion for mental wellness",
       "description": "Virtual ADHD assistant with real-time voice interaction",
       "info": "Built a virtual ADHD therapist using MEAN Stack, ElevenLabs, Gemini APIs, and n8n for real-time, voice-based adaptive interactions. Integrated Redis caching as a long-term memory layer, improving personalized recall. Supported 100+ adaptive voice commands with highly context-aware responses. Implemented RAG + async workflows to boost response accuracy by 35% and optimized performance to handle 1K+ daily queries with low latency.",
