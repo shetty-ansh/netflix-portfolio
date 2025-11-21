@@ -25,7 +25,7 @@ const Projects = () => {
         info: "Built to deliver instant, personalized music analytics using Angular frontend and Node/Express backend with Spotify OAuth. Focused on async API calls, rate-limit handling and visualizations. Learned secure OAuth flows, data mapping, efficient async patterns, and crafting shareable UI insights."
     },
     {
-        id: 2,
+        id: 8,
         name: "Career Crate",
         tagline: "Your next opportunity awaits",
         description: "MERN stack job portal with search and filtration",
@@ -36,28 +36,44 @@ const Projects = () => {
             "Database Optimization", "Authentication","Responsive Design", "Full-Stack Development"
         ],
         link: "https://github.com/shetty-ansh/CareerCrate-",
-        featured: true,
+        featured: false,
         status: true,
         info: "Created a scalable MERN job portal to support bulk listings and search. Implemented indexed queries, pagination, and optimized APIs for lower latency. Learned practical database indexing, search/filter design, API performance tuning, and frontend-backend coordination for large datasets."
     },
     {
-        id: 3,
-        name: "IRA Therapist",
-        tagline: "Your AI companion for mental wellness",
-        description: "Virtual assistant with real-time voice interaction",
-        info: "Built a virtual assistant using MEAN Stack, ElevenLabs and Gemini APIs, supporting 100+ voice commands and real-time interactions. Integrated speech-to-text, text-to-speech with API models for context-aware, personalized responses. Constructed modular backend/frontend components with asynchronous workflows, improving response efficiency and capable of handling 1000+ queries daily.",
-        category: "fullstack",
-        skills: [
-            "Express.js", "Angular", "Node.js", "ElevenLabs API",
-            "Gemini API", "Speech-to-Text", "Text-to-Speech", "Asynchronous Workflows"
-        ],
-        link: "https://github.com/shetty-ansh/ira-therapist",
-        featured: true,
-        status: true,
-        info: "Built a voice-first assistant using MEAN and external TTS/STT APIs to enable real-time, context-aware interactions. Focused on async orchestration, session context, and modular components. Learned API chaining, latency mitigation, privacy considerations, and robust conversational flows."
+       "id": 3,
+      "name": "IRA Therapist",
+      "tagline": "Your AI companion for mental wellness",
+      "description": "Virtual ADHD assistant with real-time voice interaction",
+      "info": "Built a virtual ADHD therapist using MEAN Stack, ElevenLabs, Gemini APIs, and n8n for real-time, voice-based adaptive interactions. Integrated Redis caching as a long-term memory layer, improving personalized recall. Supported 100+ adaptive voice commands with highly context-aware responses. Implemented RAG + async workflows to boost response accuracy by 35% and optimized performance to handle 1K+ daily queries with low latency.",
+      "category": "fullstack",
+      "skills": [
+        "Angular", "Node.js", "Express.js", "MongoDB",
+        "Redis", "ElevenLabs API", "Gemini API",
+        "Speech-to-Text", "Text-to-Speech", "n8n", "RAG", "Asynchronous Workflows"
+      ],
+      "link": "https://github.com/shetty-ansh/nirva-therapist",
+      "featured": true,
+      "status": true
     },
     {
-        id: 4,
+      "id": 4,
+      "name": "IRA – Ideate, Research, Act",
+      "tagline": "AI GTM Research & Lead Automation",
+      "description": "Automated GTM research and early lead discovery",
+      "info": "Developed an AI-powered GTM companion that automates market research and new-idea validation, cutting manual effort by ~70%. Analyzes 50+ articles and reports to generate 2–4 page viability summaries with idea scoring, competitor mapping, and trend insights in under 90 seconds. Automates lead discovery by identifying 3–5 LinkedIn professionals per idea with outreach drafts, improving prospecting speed by 40%. Generates downloadable reports for faster GTM decision-making.",
+      "category": "fullstack",
+      "skills": [
+        "Node.js", "Angular", "Express.js", "Web Scraping",
+        "LLM Prompting", "Market Analysis", "Automation Workflows",
+        "API Integration", "Cron Jobs", "RAG", "CSV Pipelines"
+      ],
+      "link": "https://github.com/shetty-ansh/research-market-assistant",
+      "featured": true,
+      "status": true
+    },
+    {
+        id: 5,
         name: "SattvaApp",
         tagline: "Mental health meets technology",
         description: "Mental health platform with AI-driven insights",
@@ -74,7 +90,7 @@ const Projects = () => {
         info: "Developed a mental-health platform combining tracking, journaling, and AI insights using Angular and Node.js. Built schemas for time-series mood data and secured REST endpoints. Learned product-driven feature design, data modeling for user metrics, and presenting insights to drive engagement."
     },
     {
-        id: 5,
+        id: 6,
         name: "Drive-Safe",
         tagline: "Safety through intelligence",
         description: "Driver fatigue detection system",
@@ -87,7 +103,7 @@ const Projects = () => {
         info: "Built a real-time driver fatigue detector using computer vision and ML to trigger safety alerts. Implemented model inference and low-latency processing. Learned dataset labeling, model evaluation, latency optimization, and deploying CV models for edge-like real-time use cases."
     },
     {
-        id: 6,
+        id: 7,
         name: "FMC Backend API",
         tagline: "Enterprise-grade API solutions",
         description: "RESTful API with JWT authentication for ship management",
@@ -100,7 +116,7 @@ const Projects = () => {
         info: "Implemented a secure REST API for ship management with JWT auth, validation, and clear error handling. Focused on route protection, consistent responses, and documentation. Learned best practices in auth, API ergonomics, and building maintainable backend services."
     },
     {
-        id: 7,
+        id: 2,
         name: "CivicTracker",
         tagline: "Democracy in action",
         description: "Track and manage civic issues",
@@ -113,7 +129,7 @@ const Projects = () => {
         info: "Built to let citizens report and track civic issues using Angular and Node. Implemented reporting workflows and status tracking with attention to moderation and transparency. Learned designing user-submitted workflows, notification flows, and handling inconsistent external data."
     },
     {
-        id: 8,
+        id: 9,
         name: "Netflix Portfolio",
         tagline: "Entertainment meets professionalism",
         description: "Netflix-inspired portfolio project",
@@ -126,7 +142,7 @@ const Projects = () => {
         info: "Designed a cinematic portfolio inspired by Netflix UI using React and Tailwind. Focused on animations, responsive layouts and polished interactions. Learned advanced CSS animations, component reuse, responsive patterns, and making UX feel ‘‘delightful’’ while performant."
     },
     {
-        id: 9,
+        id: 10,
         name: "Cognita",
         tagline: "AI Powered Complete Learning Platform",
         description: "Complete learning management system",
@@ -139,7 +155,7 @@ const Projects = () => {
         info: "Built an AI-enhanced learning platform to personalize courses and track progress using React and Node. Integrated recommendation logic and interactive modules. Learned personalization strategies, scaling content delivery, and designing tracking systems for learning outcomes."
     },
     {
-        "id": 10,
+        "id": 11,
         "name": "Zenskar CSV Processing Pipeline",
         "tagline": "Automated Modular Data Upload System",
         "description": "A complete modular CSV processing and upload pipeline built using Windmill and MockAPI.",
